@@ -1,25 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm';
+import Home from './Home';
+import Learn from './Learn';
+import Teach from './Teach';
+import ContactUs from './ContactUs';
+
+
 
 function App() {
+
+  //Component names use below syntax always
+  // function LoginForm
+
+  //camelCasing always use this syntax for variable names
+  // const userFirstName = '';
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Router>
+      <Switch>
+        <Route path='/' exact>
+          <Home />
+        </Route>
+        <Route path='/learn' exact>
+          <Learn/>
+        </Route>
+        <Route path='/teach' exact>
+          <Teach/>
+        </Route>
+        <Route path='/contact-us' exact>
+          <ContactUs/>
+        </Route>
+        <Route path='/login' exact>
+          <LoginForm/>
+        </Route>
+        <Route path='/sign-up' exact>
+          <SignUpForm/>
+        </Route>
+      </Switch>
+    </Router>
+    // <div className="App">
+       /* <div> 
+        <LoginForm/>
+      </div>
+      <div> 
+        <SignUpForm/>
+      </div> */
+    // </div>
+
   );
 }
 
