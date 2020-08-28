@@ -7,6 +7,7 @@ import Home from './Home';
 import Learn from './Learn';
 import Teach from './Teach';
 import ContactUs from './ContactUs';
+import Store from './store';
 
 
 
@@ -18,10 +19,10 @@ function App() {
   //camelCasing always use this syntax for variable names
   // const userFirstName = '';
   return (
-    
+    <Store>
     <Router>
       <Switch>
-        <Route path='/' exact>
+        <Route path='/home' exact>
           <Home />
         </Route>
         <Route path='/learn' exact>
@@ -41,16 +42,9 @@ function App() {
         </Route>
       </Switch>
     </Router>
-    // <div className="App">
-       /* <div> 
-        <LoginForm/>
-      </div>
-      <div> 
-        <SignUpForm/>
-      </div> */
-    // </div>
+    </Store>
 
-  );
+);
 }
 
 export default App;

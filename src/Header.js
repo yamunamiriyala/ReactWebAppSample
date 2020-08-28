@@ -7,7 +7,7 @@ function Header() {
     return (
           <div className="Home"> 
             <h1>
-                MyReactApp
+                <Link to='/home'>MyReactApp</Link>
             </h1>
             <div className="Header">
                     
